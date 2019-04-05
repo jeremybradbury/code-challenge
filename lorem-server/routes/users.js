@@ -2,6 +2,12 @@ var models = require("../models");
 var express = require("express");
 var router = express.Router();
 
+router.get("/list", function(req, res) {
+  models.MockData.findAll().then(function(result) {
+    res.json(result);
+  });
+});
+
 router.post("/create", function(req, res) {
   models.MockData
     .findAll({
