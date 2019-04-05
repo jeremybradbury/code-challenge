@@ -3,6 +3,7 @@ module.exports = (sequelize, DataTypes) => {
     "MockData",
     {
       email: DataTypes.STRING,
+      message: DataTypes.STRING,
       foo: DataTypes.STRING,
       bar: DataTypes.STRING,
     },
