@@ -1,24 +1,29 @@
 {
   "name": "code-challenge",
   "version": "1.0.0",
-  "description": "![Dutch Bros](https://files.dutchbros.com/StaticImages/Dutch_Bros_Logo.png)",
+  "description":
+    "![Dutch Bros](https://files.dutchbros.com/StaticImages/Dutch_Bros_Logo.png)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "server": "cd lorem-server && yarn start",
+    "client": "cd ipsum-edit && yarn start",
+    "test-server": "cd lorem-server && yarn test",
+    "test-client": "cd ipsum-edit && yarn test all",
+    "start": "concurrently \"yarn server\" \"yarn client\"",
+    "test": "concurrently \"yarn test-server\" \"yarn test-client\""
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/DutchBros/code-challenge.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Jeremy Bradbury",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/DutchBros/code-challenge/issues"
   },
   "homepage": "https://github.com/DutchBros/code-challenge#readme",
   "dependencies": {
-    "express": "^4.16.4",
-    "sequelize": "^5.2.11"
+    "concurrently": "^4.1.0"
   }
 }
